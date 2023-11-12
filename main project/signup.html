@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#273d48" />
+    <meta http-equiv="Cache-control" content="no-cache">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/touchjs/0.2.14/touch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+    <link rel="stylesheet" href="sign.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="application-header-wrapper">
+        <div class="application-header" clear>
+            <div class="transparent-background"></div>
+            <div class="side-menu-open-option"></div>
+            <div class="side-menu-box">
+                <div class="user-info" data-page-click="your-profile-page">
+                    <div class="login-user-photo"></div>
+                    <div class="login-user-name">CREDITSCORE</div>
+                    <div class="login-user-address">UNLOCK YOUR POSSIBILTIES</div>
+                </div>
+                <div class="side-menu-option">
+                    <ul>
+                        <li data-page-click="home-page"><a href="javascript:;"><span class="icon-menu"><i
+                                        class="fas fa-home"></i></span><span class="menu-text">Home</span></a></li>
+                        <li data-page-click="your-request"><a href="javascript:;"><span class="icon-menu"><i
+                                        class="fas fa-chalkboard-teacher"></i></span><span class="menu-text">Your
+                                    request</span></a></li>
+                        <li data-page-click="i-want-to-sell"><a href="javascript:;"><span class="icon-menu"><i
+                                        class="fas fa-cart-plus"></i></span><span class="menu-text">I want to
+                                    sell</span></a></li>
+                        <li data-page-click="my-product"><a href="javascript:;"><span class="icon-menu"><i
+                                        class="fab fa-product-hunt"></i></span><span class="menu-text">My product</span></a>
+                        </li>
+                        <li data-page-click="fare-price"><a href="javascript:;"><span class="icon-menu"><i
+                                        class="fas fa-hand-holding-usd"></i></span><span class="menu-text">Fare
+                                    price</span></a></li>
+                        <li data-page-click="change-language"><a href="javascript:;"><span class="icon-menu"><i
+                                        class="fas fa-language"></i></span><span class="menu-text">Change
+                                    language</span></a></li>
+                        <li><a href="javascript:;"><span class="icon-menu"><i class="fas fa-star"></i></span><span
+                                    class="menu-text">Rate us</span></a></li>
+                        <li data-page-click="faq"><a href="javascript:;"><span class="icon-menu"><i
+                                        class="far fa-question-circle"></i></span><span class="menu-text">Faq</span></a>
+                        </li>
+                        <li data-page-click="contact-us"><a href="javascript:;"><span class="icon-menu"><i
+                                        class="fas fa-phone"></i></span><span class="menu-text">Contact us</span></a></li>
+                        <li><a href="javascript:;"><span class="icon-menu"><i class="fas fa-share-alt"></i></span><span
+                                    class="menu-text">Share</span></a></li>
+                        <li data-page-click="about-us"><a href="javascript:;"><span class="icon-menu"><i
+                                        class="fas fa-info-circle"></i></span><span class="menu-text">About us</span></a>
+                        </li>
+                        <li data-out="logout"><a href="javascript:;"><span class="icon-menu"><i
+                                        class="fas fa-sign-out-alt"></i></span><span class="menu-text">Log out</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="float-left" clear>
+                <div class="side-menu-icon ripple"><i class="fas fa-bars"></i><i class="fas fa-arrow-left"></i></div>
+                <div class="application-name">CREDITSCORE</div>
+            </div>
+            <div class="float-right" clear>
+                <div class="add-to-bag-option ripple" data-page-click="your-bag"><i class="fas fa-shopping-bag"></i><span
+                        class="product-count">5</span></div>
+                <div class="global-search ripple" data-page-click="search"><i class="fas fa-search"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="application-body-wrapper">
+        <div class="application-body">
+            <div class="home-page-content-wrapper" data-page="home-page">
+                <section id="slider-wrapper">
+                    <div class="owl-carousel">
+                        <div data-page-click="slider-page"><img
+                                src="http://kiranajunction.in/KiranaJunctionAdminpanel/uploads/624717412-1024x1024.jpg">
+                        </div>
+                        <div data-page-click="slider-page"><img
+                                src="http://kiranajunction.in/KiranaJunctionAdminpanel/uploads/750414849-1024x1024.jpg">
+                        </div>
+                        <div data-page-click="slider-page"><img
+                                src="http://kiranajunction.in/KiranaJunctionAdminpanel/uploads/623717300-1024x1024.jpg">
+                        </div>
+                        <div data-page-click="slider-page"><img
+                                src="http://kiranajunction.in/KiranaJunctionAdminpanel/uploads/734166425-1024x1024.jpg">
+                        </div>
+                    </div>
+                </section>
+                <section id="marquee-product">
+                    <ul class="product-list" clear>
+                        <li class="product-item up" clear><span class="product-name">Weats</span><span class="arrow"><i
+                                    class="fas fa-caret-up"></i></span></li>
+                        <li class="product-item up" clear><span class="product-name">Oil</span><span class="arrow"><i
+                                    class="fas fa-caret-up"></i></span></li>
+                        <li class="product-item down" clear><span class="product-name">Food oil</span><span class="arrow"><i
+                                    class="fas fa-caret-up"></i></span></li>
+                        <li class="product-item up" clear><span class="product-name">Vegetables</span><span class="arrow"><i
+                                    class="fas fa-caret-up"></i></span></li>
+                        <li class="product-item down" clear><span class="product-name">Rice</span><span class="arrow"><i
+                                    class="fas fa-caret-up"></i></span></li>
+                    </ul>
+                </section>
+                <section id="product-category">
+                    <div class="category-list">
+                        <ul class="">
+                            <li class="item">
+                                <div class="category-item ripple" clear>
+                                    <div class="category-image"><img
+                                            src="https://st2.depositphotos.com/3239661/8098/i/950/depositphotos_80987596-stock-photo-field-of-weat-on-wind.jpg">
+                                    </div>
+                                    <div class="category-name">Weat<span class="category-description">Weat product global
+                                            weat etc etc</span></div>
+                                    <div class="category-arrow"><i class="fas fa-chevron-down"></i></div>
+                                </div>
+                                <div class="category-product-item">
+                                    <ul>
+                                        <li clear>
+                                            <div class="product-item-name">Testing A</div>
+                                            <div class="add-to-bag-button" data-product-id="1"><span class="bag-icon"><i
+                                                        class="fas fa-shopping-bag"></i></span><span class="bag-text">Add to
+                                                    bag</span></div>
+                                        </li>
+                                        <li clear>
+                                            <div class="product-item-name">Testing B</div>
+                                            <div class="add-to-bag-button" data-product-id="2"><span class="bag-icon"><i
+                                                        class="fas fa-shopping-bag"></i></span><span class="bag-text">Add to
+                                                    bag</span></div>
+                                        </li>
+                                        <li clear>
+                                            <div class="product-item-name">Testing C</div>
+                                            <div class="add-to-bag-button" data-product-id="3"><span class="bag-icon"><i
+                                                        class="fas fa-shopping-bag"></i></span><span class="bag-text">Add to
+                                                    bag</span></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="category-item ripple" clear>
+                                    <div class="category-image"><img
+                                            src="https://st2.depositphotos.com/3239661/8098/i/950/depositphotos_80987596-stock-photo-field-of-weat-on-wind.jpg">
+                                    </div>
+                                    <div class="category-name">Weat<span class="category-description">Weat product global
+                                            weat etc etc</span></div>
+                                    <div class="category-arrow"><i class="fas fa-chevron-down"></i></div>
+                                </div>
+                                <div class="category-product-item">
+                                    <ul>
+                                        <li clear>
+                                            <div class="product-item-name">Testing A</div>
+                                            <div class="add-to-bag-button" data-product-id="1"><span class="bag-icon"><i
+                                                        class="fas fa-shopping-bag"></i></span><span class="bag-text">Add to
+                                                    bag</span></div>
+                                        </li>
+                                        <li clear>
+                                            <div class="product-item-name">Testing B</div>
+                                            <div class="add-to-bag-button" data-product-id="2"><span class="bag-icon"><i
+                                                        class="fas fa-shopping-bag"></i></span><span class="bag-text">Add to
+                                                    bag</span></div>
+                                        </li>
+    
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div data-page="your-bag">
+                <section id="your-bag">
+                    <div class="common-page-gap">
+                        <div class="common-page-top-heading">
+                            <h4><i class="fas fa-shopping-bag"></i>Your bag</h4>
+                        </div>
+                        <div class="product-list-bag">
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="collon-option-for-all-reatailers">
+                            <label>Payment mode</label>
+                            <select>
+                                <option>Cash</option>
+                                <option>Online</option>
+                                <option>1 Week</option>
+                                <option>2 Week</option>
+                                <option>3 Week</option>
+                                <option>1 Month</option>
+                            </select>
+                            <label>Due date</label>
+                            <input type="date">
+                            <!--<div class="retailer-list">
+                         <ul>
+                         	<li>
+                         		<div class="retailer-name">Retailer A</div>
+                         		<div class="retailer-ratings">4/5</div>
+                         	</li>
+                         </ul>
+                         </div>-->
+                            <label>Message to seller</label>
+                            <textarea></textarea>
+                        </div>
+                        <div class="button-wrapper your-bag-button-wrapper" clear>
+                            <button>Submit your request</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="search-product-wrapper" data-page="search">
+                <div class="search-items">
+                    <label>Search product</label>
+                    <input type="text" id="search-text">
+                </div>
+                <div class="searched-product">
+                    <ul></ul>
+                </div>
+            </div>
+            <div data-page="your-request">
+                <section>
+                    <div class="common-page-gap">
+                        <div class="common-page-top-heading">
+                            <!--<h4><i class="fas fa-chalkboard-teacher"></i>Your request</h4>-->
+                            <div class="your-request-tabber">
+                                <div class="tabber-click" clear>
+                                    <div class="active-tab" data-tab-click="your-request">Received</div>
+                                    <div data-tab-click="sent-request">Sent</div>
+                                </div>
+                                <div class="tabber-content">
+                                    <div data-tab="your-request">
+                                        <div class="received-wrapper">
+                                            <ul>
+                                                <li>
+                                                    <div class="received-item" clear>
+                                                        <div class="received-product-description" clear>
+                                                            <div class="received-product-name" clear><span
+                                                                    class="name">Product A</span><span
+                                                                    class="status-of-product-by-date active">Active</span>
+                                                            </div>
+                                                            <div class="product-user-name"><i
+                                                                    class="fas fa-user"></i><span>Ravi Bansal</span></div>
+                                                            <div class="received-product-quantity"><b>Quantity:</b><span>20
+                                                                    bags</span></div>
+                                                            <div class="received-product-request-date"><b>Date of
+                                                                    request:</b><span>26-Sep-2018</span></div>
+                                                            <div class="received-product-request-due-date"><b>Due
+                                                                    date:</b><span>1-Oct-2018</span></div>
+                                                            <div class="received-product-request-payment-mode"><b>Payment
+                                                                    mode:</b><span>Cash</span></div>
+                                                            <div class="chat-to-retailer ripple" data-page-click="chat"><i
+                                                                    class="fas fa-comments"></i>Chat to buyer</div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="received-item" clear>
+                                                        <div class="received-product-description" clear>
+                                                            <div class="received-product-name" clear><span
+                                                                    class="name">Product A</span><span
+                                                                    class="status-of-product-by-date active">Active</span>
+                                                            </div>
+                                                            <div class="product-user-name"><i
+                                                                    class="fas fa-user"></i><span>Ravi Bansal</span></div>
+                                                            <div class="received-product-quantity"><b>Quantity:</b><span>20
+                                                                    bags</span></div>
+                                                            <div class="received-product-request-date"><b>Date of
+                                                                    request:</b><span>26-Sep-2018</span></div>
+                                                            <div class="received-product-request-due-date"><b>Due
+                                                                    date:</b><span>1-Oct-2018</span></div>
+                                                            <div class="received-product-request-payment-mode"><b>Payment
+                                                                    mode:</b><span>Cash</span></div>
+                                                            <div class="chat-to-retailer ripple" data-page-click="chat"><i
+                                                                    class="fas fa-comments"></i>Chat to buyer</div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="received-item" clear>
+                                                        <div class="received-product-description" clear>
+                                                            <div class="received-product-name" clear><span
+                                                                    class="name">Product A</span><span
+                                                                    class="status-of-product-by-date expired">Expired</span>
+                                                            </div>
+                                                            <div class="product-user-name"><i
+                                                                    class="fas fa-user"></i><span>Ravi Bansal</span></div>
+                                                            <div class="received-product-quantity"><b>Quantity:</b><span>20
+                                                                    bags</span></div>
+                                                            <div class="received-product-request-date"><b>Date of
+                                                                    request:</b><span>26-Sep-2018</span></div>
+                                                            <div class="received-product-request-due-date"><b>Due
+                                                                    date:</b><span>1-Oct-2018</span></div>
+                                                            <div class="received-product-request-payment-mode"><b>Payment
+                                                                    mode:</b><span>Cash</span></div>
+                                                            <div class="chat-to-retailer ripple" data-page-click="chat"><i
+                                                                    class="fas fa-comments"></i>Chat to buyer</div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div data-tab="sent-request">
+                                        <div class="received-wrapper">
+                                            <ul>
+                                                <li>
+                                                    <div class="received-item" clear>
+                                                        <div class="received-product-description" clear>
+                                                            <div class="received-product-name" clear><span
+                                                                    class="name">Product A</span><span
+                                                                    class="status-of-product-by-date active">Active</span>
+                                                            </div>
+                                                            <div class="product-user-name"><i
+                                                                    class="fas fa-user"></i><span>Ravi Bansal</span></div>
+                                                            <div class="received-product-quantity"><b>Quantity:</b><span>20
+                                                                    bags</span></div>
+                                                            <div class="received-product-request-date"><b>Date of
+                                                                    request:</b><span>26-Sep-2018</span></div>
+                                                            <div class="received-product-request-due-date"><b>Due
+                                                                    date:</b><span>1-Oct-2018</span></div>
+                                                            <div class="received-product-request-payment-mode"><b>Payment
+                                                                    mode:</b><span>Cash</span></div>
+                                                            <div class="chat-to-retailer ripple" data-page-click="chat"><i
+                                                                    class="fas fa-comments"></i>Chat to seller</div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="received-item" clear>
+                                                        <div class="received-product-description" clear>
+                                                            <div class="received-product-name" clear><span
+                                                                    class="name">Product A</span><span
+                                                                    class="status-of-product-by-date active">Active</span>
+                                                            </div>
+                                                            <div class="product-user-name"><i
+                                                                    class="fas fa-user"></i><span>Ravi Bansal</span></div>
+                                                            <div class="received-product-quantity"><b>Quantity:</b><span>20
+                                                                    bags</span></div>
+                                                            <div class="received-product-request-date"><b>Date of
+                                                                    request:</b><span>26-Sep-2018</span></div>
+                                                            <div class="received-product-request-due-date"><b>Due
+                                                                    date:</b><span>1-Oct-2018</span></div>
+                                                            <div class="received-product-request-payment-mode"><b>Payment
+                                                                    mode:</b><span>Cash</span></div>
+                                                            <div class="chat-to-retailer ripple" data-page-click="chat"><i
+                                                                    class="fas fa-comments"></i>Chat to seller</div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="received-item" clear>
+                                                        <div class="received-product-description" clear>
+                                                            <div class="received-product-name" clear><span
+                                                                    class="name">Product A</span><span
+                                                                    class="status-of-product-by-date expired">Expired</span>
+                                                            </div>
+                                                            <div class="product-user-name"><i
+                                                                    class="fas fa-user"></i><span>Ravi Bansal</span></div>
+                                                            <div class="received-product-quantity"><b>Quantity:</b><span>20
+                                                                    bags</span></div>
+                                                            <div class="received-product-request-date"><b>Date of
+                                                                    request:</b><span>26-Sep-2018</span></div>
+                                                            <div class="received-product-request-due-date"><b>Due
+                                                                    date:</b><span>1-Oct-2018</span></div>
+                                                            <div class="received-product-request-payment-mode"><b>Payment
+                                                                    mode:</b><span>Cash</span></div>
+                                                            <div class="chat-to-retailer ripple" data-page-click="chat"><i
+                                                                    class="fas fa-comments"></i>Chat to seller</div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div data-page="i-want-to-sell">
+                <section>
+                    <div class="common-page-gap">
+                        <div class="common-page-top-heading">
+                            <h4><i class="fas fa-cart-plus"></i>I want to sell</h4>
+                        </div>
+                        <div class="warning msg warning-shop-name-data">Seems like You are not fill your shop name in your
+                            profile, Please enter the shop name first, Please prefer the link <a
+                                data-page-click="your-profile-page">Profile page</a></div>
+                        <div class="form-area">
+                            <label>Product name</label>
+                            <select class="your-selected-product-list"></select>
+                            <label>Product Quantity</label>
+                            <div class="product-quantity-wrapper" clear>
+                                <input type="text">
+                                <select>
+                                    <option>Bag</option>
+                                    <option>Kg</option>
+                                    <option>Ton</option>
+                                    <option>Gm</option>
+                                    <option>Cartoon</option>
+                                    <option>Piece</option>
+                                    <option>Packet</option>
+                                    <option>Tin</option>
+                                    <option>Ltr</option>
+                                </select>
+                            </div>
+                            <label>Product price</label>
+                            <input type="number">
+                            <label>Valid till</label>
+                            <input type="date">
+                            <label>Shop name</label>
+                            <input type="text" id="shop-name" disabled>
+                            <label>Seller phone number</label>
+                            <input type="number">
+                            <label>Product description</label>
+                            <textarea></textarea>
+                            <div class="button-wrapper" clear>
+                                <button class="btn new-sell-request">Create new sell request</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div data-page="fare-price">
+                <section>
+                    <div class="common-page-gap">
+                        <div class="common-page-top-heading">
+                            <!--<h4><i class="fas fa-hand-holding-usd"></i>Fare price</h4>-->
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Product name</td>
+                                        <td>Prev price</td>
+                                        <td>New price</td>
+                                        <td>Different</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Product A</td>
+                                        <td>25.00rs</td>
+                                        <td>50.00</td>
+                                        <td>25.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Product B</td>
+                                        <td>25.00rs</td>
+                                        <td>50.00</td>
+                                        <td>25.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Product C</td>
+                                        <td>25.00rs</td>
+                                        <td>50.00</td>
+                                        <td>25.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div data-page="my-product">
+                <section>
+                    <div class="common-page-gap">
+                        <div class="common-page-top-heading">
+                            <h4><i class="fab fa-product-hunt"></i>My product</h4>
+                            <div class="my-product-page-wrapper">
+                                <div class="form-area">
+                                    <label>Select product</label>
+                                    <select class="all-product-list" multiple="multiple">
+                                        <option>Product 1</option>
+                                        <option>Product B</option>
+                                        <option>Product C</option>
+                                        <option>Product D</option>
+                                    </select>
+                                </div>
+                                <!--<div class="selected-product-wrapper" clear></div>-->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div data-page="change-language">
+                <section>
+                    <div class="common-page-gap">
+                        <div class="common-page-top-heading">
+                            <h4><i class="fas fa-language"></i>Select language</h4>
+                        </div>
+                        <div id="google_translate_element"></div>
+                    </div>
+                </section>
+            </div>
+            <div data-page="faq">
+                <section>
+                    <div class="common-page-gap">
+                        <div class="common-page-top-heading">
+                            <h4><i class="far fa-question-circle"></i>Faq</h4>
+                        </div>
+                        <div class="faq-accordion">
+                            <div class="accordion-wrapper" id="bhg">
+                                <div class="accordion-click" clear>
+                                    <div class="accordion-text">Question one</div>
+                                    <div class="question-arrow"><i class="fas fa-chevron-down"></i></div>
+                                </div>
+                                <div class="accordion-content">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                                    the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                                    specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic typesetting,
+                                    remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                    Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </div>
+                            </div>
+                            <div class="accordion-wrapper" id="bhg">
+                                <div class="accordion-click" clear>
+                                    <div class="accordion-text">Question two</div>
+                                    <div class="question-arrow"><i class="fas fa-chevron-down"></i></div>
+                                </div>
+                                <div class="accordion-content">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                                    the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                                    specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic typesetting,
+                                    remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                    Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </div>
+                            </div>
+                            <div class="accordion-wrapper" id="bhg">
+                                <div class="accordion-click" clear>
+                                    <div class="accordion-text">Question three</div>
+                                    <div class="question-arrow"><i class="fas fa-chevron-down"></i></div>
+                                </div>
+                                <div class="accordion-content">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                                    the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                                    specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic typesetting,
+                                    remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                    Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div data-page="contact-us">
+                <section>
+                    <div class="common-page-gap">
+                        <div class="common-page-top-heading">
+                            <h4><i class="fas fa-phone"></i>Contact us</h4>
+                        </div>
+                        <div class="contact-us-wrapper">
+                            <h4>For any query related to app or to add product in the app</h4>
+                            <div class="mail">
+                                <i class="fas fa-envelope"></i>Mail us
+                                <div>care@kiranajunction.in</div>
+                            </div>
+                            <div class="call">
+                                <i class="fas fa-phone"></i>Call us
+                                <span>
+                                    <ul>
+                                        <li>+91-98930-65663</li>
+                                        <li>+91-93299-08001</li>
+                                        <li>+91-97877-74155</li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div data-page="about-us">
+                <section>
+                    <div class="common-page-gap">
+                        <div class="common-page-top-heading">
+                            <h4><i class="fas fa-info-circle"></i>About us</h4>
+                        </div>
+                        <div class="about-us-wrapper">
+                            <h4>About kirana junction</h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                galley of type and scrambled it to make a type specimen book.
+                                It has survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div data-page="your-profile-page">
+                <section>
+                    <div class="common-page-gap">
+                        <div class="common-page-top-heading">
+                            <h4><i class="fas fa-user-shield"></i>Your Profile</h4>
+                        </div>
+                        <div class="profile-edit">
+                            <div class="user-photo" clear>
+                                <div class="user-photo-image">
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/513177/profile/profile-80.jpg?1">
+                                </div>
+                                <div class="input-type-file-user-photo">
+                                    <input type="file">
+                                </div>
+                            </div>
+                            <div class="form-area">
+                                <label>Name</label>
+                                <input type="text">
+                                <label>Phone</label>
+                                <input type="number">
+                                <label>Address line 1</label>
+                                <input type="text">
+                                <label>Address line 2</label>
+                                <input type="text">
+                                <label>Pin code</label>
+                                <input type="number">
+                                <label>State</label>
+                                <select class="State"></select>
+                                <label>City</label>
+                                <div class="option">
+                                    <select class="Africa">
+                                    </select>
+                                </div>
+                                <label>Shop name (If you are seller)</label>
+                                <input type="text" id="shop-name-profile">
+                                <label>Description</label>
+                                <textarea></textarea>
+                                <div class="button-wrapper" clear>
+                                    <button class="btn">Save profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="chat-screen" data-page="chat">
+                <div class="chat-heading" clear>
+                    <div class="chat-back-button" data-page-click="your-request"><i class="fas fa-chevron-left"></i></div>
+                    <div class="select-retailer">
+                        <!--<label>Select buyer for chat</label>-->
+                        <select>
+                            <option>Select buyer</option>
+                            <option>Buyer A</option>
+                            <option>Buyer B</option>
+                            <option>Buyer C</option>
+                        </select>
+                    </div>
+                    <div class="online-status online">Online</div>
+                </div>
+                <div class="chat-box-wrapper">
+                    <div class="chat-show-area"></div>
+                    <div class="chat-write-area" clear>
+                        <div class="chat-option"></div>
+                        <div class="chat-area" contenteditable="true"></div>
+                        <div class="chat-sent ripple">Send</div>
+                    </div>
+                </div>
+            </div>
+            <div data-page="slider-page">
+                Slider description HTML
+                <div data-page-click="home-page" class="close-slider-page-button">Close</div>
+            </div>
+        </div>
+    </div>
+    <div class="application-footer-wrapper">
+        <div class="application-footer">
+            <div class="footer-nav" clear>
+                <div class="ripple" data-page-click="home-page">
+                    <div class="footer-bag-icon common-icon-footer"><i class="fas fa-home"></i></div>
+                    <div class="footer-option"></div>
+                </div>
+                <div class="ripple" data-page-click="your-bag">
+                    <div class="footer-bag-icon common-icon-footer"><i class="fas fa-shopping-bag"></i><span
+                            class="product-count">7</span></div>
+                    <div class="footer-option"></div>
+                </div>
+                <div class="ripple" data-page-click="home-page">
+                    <div class="footer-bag-icon common-icon-footer"><i class="fas fa-arrow-left"></i></div>
+                    <div class="footer-option"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cover"></div>
+    <div class="offline-app">
+        <div class="icon"><i class="fas fa-ban"></i></div>
+        <div class="offline-msg-text">You may have slow internet connection or internet may lose from your device <b>Try
+                reloading your application</b></div>
+        <div class="reload-btn">Reload</div>
+    </div>
+    <div class="authentication-page" style="display:block;">
+        <div class="authentication-page-main">
+            <div class="form-box-authentication">
+                <div class="logo-box">
+                    <img src="imagesc/images (6).jpg"
+                        alt="Kirana Junction">
+                </div>
+                <div class="login" data-authentication="login-page" style="display:block;">
+                    <form id="login">
+                        <div class="wrap-inputs"><label>Email or Phone</label><input name="email" type="text"></div>
+                        <div class="wrap-inputs"><label>Password</label><input name="password" type="password"></div>
+                        <div class="wrap-inputs" clear><button id="" class="btn-auth loading"
+                                data-page-click="home-page">Login</button></div>
+                        <div class="authentication-more-option">
+                            <ul>
+                                <li data-authentication-click="signup-page">Signup here</li>
+                                <li data-authentication-click="forget-password-page">Forget password</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup" hide data-authentication="signup-page">
+                    <form id="signup">
+                        <div class="wrap-inputs"><label>Email or Phone</label><input name="email" type="text"></div>
+                        <div class="wrap-inputs"><label>Password</label><input name="password" type="password"></div>
+                        <div class="wrap-inputs" clear><button id="" class="btn-auth loading">Signup</button></div>
+                        <div class="authentication-more-option">
+                            <ul>
+                                <li data-authentication-click="login-page">Login here</li>
+                                <li data-authentication-click="forget-password-page">Forget password</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="forget-password" hide data-authentication="forget-password-page">
+                    <div class="wrap-inputs"><label>Phone</label><input type="text"></div>
+                    <div class="wrap-inputs" clear><button id="" class="btn-auth loading">Get OTP</button></div>
+                    <div class="authentication-more-option">
+                        <ul>
+                            <li data-authentication-click="login-page">Login here</li>
+                            <li data-authentication-click="signup-page">Signup here</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="response"></div>
+</body>
+<script src="sign.js"></script>
+<script>
+    $(document).on('click', '.ripple', function (e) {
+            var $ripple = $('<span class="rippling" />'),
+                $button = $(this),
+                btnOffset = $button.offset(),
+                xPos = e.pageX - btnOffset.left,
+                yPos = e.pageY - btnOffset.top,
+                size = 0,
+                animateSize = parseInt(Math.max($button.width(), $button.height()) * Math.PI);
+
+            $ripple.css({
+                top: yPos,
+                left: xPos,
+                width: size,
+                height: size,
+                backgroundColor: $button.attr("ripple-color")
+            })
+                .appendTo($button)
+                .animate({
+                    width: animateSize,
+                    height: animateSize,
+                    opacity: 0
+                }, 500, function () {
+                    $(this).remove();
+                });
+        });
+        function cartUpdate() {
+            var carProductLength = $('.product-list-bag > ul > li').length;
+            $('.product-count').text(carProductLength);
+            if (carProductLength == 0) {
+                $('.your-bag-button-wrapper button').addClass('disabled');
+                $('.product-list-bag').append('<div class="no-items-in-bag">Currently you do not have any items in bag.</div>');
+                $('.collon-option-for-all-reatailers').hide();
+            } else {
+                $('.your-bag-button-wrapper button').removeClass('disabled');
+                $('.no-items-in-bag').remove();
+                $('.collon-option-for-all-reatailers').show();
+            }
+        }
+        $(document).on('click', '.remove-product-from-bag', function () {
+            $(this).closest('li').remove();
+            /*if (confirm("Are you sure to remove this item from bag ?")) {
+                //alert("Product removed");
+                $(this).closest('li').remove();
+            } else {
+                //alert("User canceled the task.");
+            }*/
+            cartUpdate();
+        });
+        $('.product-count').text(cartUpdate());
+        $('.product-list').slick({
+            speed: 3000,
+            autoplay: true,
+            autoplaySpeed: 0,
+            centerMode: true,
+            cssEase: 'linear',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: true,
+            infinite: true,
+            initialSlide: 1,
+            arrows: false,
+            buttons: false
+        });
+        setTimeout(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: false,
+                items: 1,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                dots: false
+            })
+        }, 1000);
+        $('.product-list,.slider-home-page').on('init', function () {
+            visibility: visible;
+        });
+        $(document).on('click', '.category-item', function (e) {
+            var offset = $(this).offset();
+            var offsetTop = offset.top - 50;
+            var thisEle = $(this);
+            $('.category-product-item').not($(this).next('.category-product-item')).slideUp(350);
+
+            $('.item').not($(this).closest('.item')).removeClass('open');
+            $(this).closest('.item').toggleClass('open');
+            $(this).next('.category-product-item').slideToggle(450);
+
+            setTimeout(function () {
+                var initialPos = $('.application-body-wrapper').scrollTop();
+                var scrollVal = thisEle.offset().top + initialPos - 50;
+                $(".application-body-wrapper").animate({ scrollTop: scrollVal }, 600);
+            }, 455);
+            console.log(offsetTop);
+        });
+        $('.side-menu-icon,.side-menu-open-option').click(function (e) {
+            e.stopPropagation();
+            $('body').toggleClass('menu-open');
+        });
+        $(document).click(function (e) {
+            $('body').removeClass('menu-open');
+        });
+        $('body').contextmenu(function () {
+            return false;
+        });
+        $(document).on('click', '.more-option-button', function (e) {
+            $(this).closest('.added-product-wrap').toggleClass('open');
+            $(this).closest('.added-product-wrap').siblings('.added-more-option').slideToggle();
+        });
+        $('[data-page-click]').click(function () {
+            $('[data-page]').hide();
+            //$('body').removeClass('page-opened');
+            var pageName = $(this).attr('data-page-click');
+            $('body').toggleClass('page-opened');
+            $(`[data-page="${pageName}"]`).toggle();
+            /*if($('body').hasClass('page-opened')){
+                $("[data-page]").addClass('hidden-anim');
+                setTimeout(function(){
+                    $("[data-page]").removeClass('hidden-anim');
+                },300);
+            }*/
+            $('.application-body-wrapper').animate({ scrollTop: 0 }, 0);
+            $('.authentication-page').hide();
+        });
+        $(document).on('click', '.add-to-bag-button', function () {
+            var productName = $(this).prev('.product-item-name').text().trim();
+            var productID = $(this).attr('data-product-id');
+            $(this).addClass('added');
+            $('.product-list-bag > ul').append(`<li clear data-product-id-on-bag="${productID}">
+								<div class="added-product-wrap" clear>
+									<div class="added-product-name">${productName}</div>
+									<div class="added-product-quantity">
+										<input type="number">
+										<select>
+											<option>Bag</option>
+											<option>Kg</option>
+											<option>Ton</option>
+											<option>Gm</option>
+											<option>Cartoon</option>
+											<option>Piece</option>
+											<option>Packet</option>
+											<option>Tin</option>
+											<option>Ltr</option>
+										</select>
+									</div>
+									<div class="remove-product-from-bag"><i class="fas fa-times"></i></div>
+									<div class="more-option-button"><i class="fas fa-chevron-down"></i></div>
+								</div>
+								<div class="added-more-option">
+									<div class="added-product-extra-form">
+										<label>Select seller</label>
+										<input type="text" value="Pankaj store">
+									</div>
+								</div>
+							</li>`);
+            cartUpdate();
+        });
+        $('[data-page-click="search"]').click(function () {
+            $('#search-text').focus();
+        });
+        var productList =
+            [{
+                "id": "123",
+                "name": "name 1"
+            }, {
+                "id": "234",
+                "name": "name 2"
+            }, {
+                "id": "234",
+                "name": "name 3"
+            }, {
+                "id": "213234234234",
+                "name": "name 3"
+            }]
+            ;
+        $('#search-text').keyup(function () {
+            $('.searched-product ul').empty();
+            var searchText = $(this).val().toLowerCase().trim();
+            var filtered = productList.filter(function (el) {
+                return el.name === searchText;
+            });
+            filtered.forEach(function (v, i) {
+                /*if(i > 0){*/
+                $('.searched-product ul').append(`<li clear data-product-id-on-bag="${v.id}"><div class="product-item-name">${v.name}</div><div class="add-to-bag-button" data-product-id="${v.id}"><span class="bag-icon"><i class="fas fa-shopping-bag"></i></span><span class="bag-text">Add to bag</span></div></li>`);
+                $('.no-search').remove();
+                /*}else{
+                    $('.searched-product ul').append('<div class="no-search">Do not find any search result</div>');
+                }*/
+
+            });
+
+        });
+        $(document).on('click', '.remove-product-from-bag', function () {
+            var getID = $(this).closest('li').attr('data-product-id-on-bag');
+            $(`[data-product-id="${getID}"]`).removeClass('added');
+        });
+        $('.accordion-click').click(function () {
+            $('.accordion-click').removeClass('accordion-open');
+            $(this).toggleClass('accordion-open');
+            $('.accordion-content').slideUp();
+            $(this).next('.accordion-content').slideToggle();
+        });
+        $('#shop-name-profile').keyup(function () {
+            var getVal = $('#shop-name-profile').val();
+            $('#shop-name').val(getVal);
+            if ($('#shop-name').val().length > 4) {
+                $('.warning-shop-name-data').hide();
+                $('.new-sell-request').removeClass('disabled');
+            } else {
+                $('.warning-shop-name-data').show();
+                $('.new-sell-request').addClass('disabled');
+            }
+        });
+        $(document).ready(function () {
+            var getVal = $('#shop-name-profile').val();
+            $('#shop-name').val(getVal);
+            if ($('#shop-name').val().length > 4) {
+                $('.warning-shop-name-data').hide();
+                $('.new-sell-request').removeClass('disabled');
+            } else {
+                $('.warning-shop-name-data').show();
+                $('.new-sell-request').addClass('disabled');
+            }
+            $('.all-product-list,.your-selected-product-list,.goog-te-combo').select2();
+        });
+        $('.all-product-list').change(function () {
+            var selectedProduct = $('.all-product-list').val();
+            $('.selected-product-wrapper,.your-selected-product-list').empty();
+            selectedProduct.forEach(function (v, i) {
+                /*$('.selected-product-wrapper').append(`
+                    <div class="selected-product-item" clear>
+                        <div class="p-name">${v}</div>
+                    </div>
+                `);*/
+                $('.your-selected-product-list').append(`<option>${v}</option>`);
+            });
+        });
+        Pace.on("done", function () {
+            $(".cover").fadeOut(1000);
+        });
+        setInterval(function () {
+            if (navigator.onLine) {
+                $('body').addClass('online').removeClass('offline');
+                $('[name="theme-color"]').attr('content', '#273d48');
+            } else {
+                $('body').removeClass('online').addClass('offline');
+                $('[name="theme-color"]').attr('content', '#F44336');
+            }
+        }, 2000);
+        $('.reload-btn').click(function () {
+            window.location.reload(true);
+        });
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+        $('.input-type-file-user-photo input').on('change', function () {
+            var files = this.files;
+            $(files).each(function (index, file) {
+                var a = URL.createObjectURL(file)
+                $('.user-photo-image img').attr('src', a)
+            });
+        });
+
+        $(function (e) {
+
+            $(document).on("swiperight", function (e) {
+                e.stopPropagation();
+                $('body').addClass('menu-open');
+            });
+            $(document).on("swipeleft", function (e) {
+                e.stopPropagation();
+                $('body').removeClass('menu-open');
+            });
+        });
+
+        $('[data-tab-click]').click(function () {
+            var getAttr = $(this).attr('data-tab-click');
+            $(this).addClass('active-tab').siblings().removeClass('active-tab');
+            $('[data-tab="' + getAttr + '"]').show().siblings().hide();
+        });
+        /*
+        $(function(){
+            $('[ data-tab="your-request"]').on('swiperight',function(e){
+                e.stopPropagation();
+                alert('asdasd')
+                $('[data-tab="sent-request"]').addClass('active-tab').siblings().removeClass('active-tab');
+            });
+            $('[ data-tab="sent-request"]').on('swipeleft',function(e){
+                e.stopPropagation();
+                alert('45645646')
+                $('[data-tab="your-request"]').addClass('active-tab').siblings().removeClass('active-tab');
+            });
+        });
+        */
+        /*--------------Chat js---------------------|START----------*/
+        $(document).ready(function () {
+            function isEmpty(el) {
+                return !$.trim(el.html())
+            }
+            $(document).on('keydown', '.chat-area', function (e) {
+                var getVal = $('.chat-area').html();
+                var dateAndTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+                if (e.keyCode == 13 && !isEmpty($(this))) {
+                    $('.chat-show-area').append('<div class="chat-msg new" position="right"> <span class="msg-avatar"> <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/513177/profile/profile-80.jpg?1"> </span> <div class="cm-msg-text">' + getVal + '<div class="cm-dt">' + dateAndTime + '</div></div> </div>');
+                    $('.chat-area').empty();
+                    setTimeout(function () {
+                        $('.chat-area').empty();
+                    }, 200);
+                    var a = $(".chat-box-wrapper .chat-show-area")[0].scrollHeight;
+                    var a = $(".chat-box-wrapper .chat-show-area").scrollTop(a);
+                }
+            });
+            $(document).on('click', '.chat-sent', function (e) {
+                var getVal = $('.chat-area').html();
+                var dateAndTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+                $('.chat-show-area').append('<div class="chat-msg new" position="right"> <span class="msg-avatar"> <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/513177/profile/profile-80.jpg?1"> </span> <div class="cm-msg-text">' + getVal + '<div class="cm-dt">' + dateAndTime + '</div></div> </div>');
+                $('.chat-area').empty();
+                setTimeout(function () {
+                    $('.chat-area').empty();
+                }, 200);
+                var a = $(".chat-box-wrapper .chat-show-area")[0].scrollHeight;
+                var a = $(".chat-box-wrapper .chat-show-area").scrollTop(a);
+            });
+        });
+
+        /*--------------Chat js---------------------|END----------*/
+        $('[data-authentication-click]').click(function () {
+            $('[data-authentication]').hide();
+            var pageName = $(this).attr('data-authentication-click');
+            $(`[data-authentication="${pageName}"]`).toggle();
+            $('.application-body-wrapper').animate({ scrollTop: 0 }, 0);
+            //$(`[data-authentication="${pageName}"] input[type="number"]`).focus();
+        });
+        $(document).on('click', '[data-out="logout"]', function () {
+            $('.authentication-page').show();
+            $('[data-page]').hide();
+        });
+
+</script>
+</html>
