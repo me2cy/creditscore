@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\ApplicationsController;
+use App\Http\Controllers\UsersDataController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public.home');
 });
 
 Route::middleware([
@@ -22,7 +26,26 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return Redirect('/admin');
     })->name('dashboard');
+    
 });
+
+Route::middleware([
+    'isAdmin',
+]) -> group(function(){
+    Route::get('/admin', [AdminDashboardController::class, 'index']);
+
+    // Route::get('/admin/applications', function () {
+    //     return view('admin.applications');
+    // });
+    Route::resource('/admin/applications', ApplicationsController::class);
+
+    Route::get('/admin/users', [UsersDataController::class, 'index']);
+
+});
+
+
+Route::get('/api/createid', [App\Http\Controllers\EthController::class, 'createID']);

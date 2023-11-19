@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\User;
+
+class UserIsAdmin
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+        // return $next($request);
+
+        // if(!auth() -> user()){
+        //     abort(404);
+        // }
+        // if(auth() -> user() -> role){
+        //     $role = auth() -> user() -> role;
+        //     if($role === 'admin'){
+                return $next($request);
+        //     }
+        //     abort(405);
+        // }
+        
+    }
+}
