@@ -28,25 +28,29 @@ Route::middleware([
 ])->group(function () {
 
     Route::get('/dashboard', function () {
-        return Redirect('/admin');
+        if(auth() -> user() -> role === 'admin'){
+            return auth() -> user() -> role;
+            // return Redirect('/admin');
+        }
+        return Redirect('/user');
     })->name('dashboard');
+
+    Route::prefix('user') -> group(function () {
+        Route::get('/', [AdminDashboardController::class, 'index']);
+        Route::resource('/admin/applications', ApplicationsController::class);
+        Route::get('/admin/users', [UsersDataController::class, 'index']);
+    });
+
+    Route::prefix('admin') -> middleware(['isAdmin']) -> group(function () {
+        Route::get('/', [AdminDashboardController::class, 'index']);
+        Route::resource('/admin/applications', ApplicationsController::class);
+        Route::get('/admin/users', [UsersDataController::class, 'index']);
+    });
     
-});
-
-Route::middleware([
-    'isAdmin',
-]) -> group(function(){
-    Route::get('/admin', [AdminDashboardController::class, 'index']);
-
-    // Route::get('/admin/applications', function () {
-    //     return view('admin.applications');
-    // });
-    Route::resource('/admin/applications', ApplicationsController::class);
-
-    Route::get('/admin/users', [UsersDataController::class, 'index']);
-
 });
 
 
 Route::get('/api/createid', [App\Http\Controllers\EthController::class, 'createID']);
+
 Route::get('/api/applications/update', [ApplicationsController::class, 'update']);
+Route::get('/api/applications/reject', [ApplicationsController::class, 'reject']);

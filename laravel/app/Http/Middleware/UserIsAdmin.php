@@ -21,16 +21,10 @@ class UserIsAdmin
     {
         // return $next($request);
 
-        // if(!auth() -> user()){
-        //     abort(404);
-        // }
-        // if(auth() -> user() -> role){
-        //     $role = auth() -> user() -> role;
-        //     if($role === 'admin'){
-                return $next($request);
-        //     }
-        //     abort(405);
-        // }
+        if(Auth::check() && Auth::user() -> role === 'admin'){
+            return $next($request);
+        }
         
+        abort(403, "Unauthorized");
     }
 }

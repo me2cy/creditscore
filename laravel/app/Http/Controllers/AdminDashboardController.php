@@ -10,7 +10,7 @@ class AdminDashboardController extends Controller
 {
     public function index(){
         $allUsers = User::where(['role' => 'user']) -> count();
-        $newUsers = User::all();
+        $newUsers = User::where(['role' => 'user']) -> orderBy('id', 'desc') -> get();
 
         $applicationsCount = Application::count();
         $approvedApplications = Application::where(['status' => 'confirmed']) -> count();

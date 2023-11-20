@@ -61,8 +61,32 @@
 
             const deleteLoanRequest = id => {
                 const agreed = confirm("Are you sure you want to delete this request?")
+
+                if(agreed){
+                    $.ajax({
+                        url: `/api/applications/reject`,
+                        type: 'get',
+                        data: { id },
+                        success: res => {
+                            console.log(res)
+                            if(res.status === 200){
+                                alert("Successfully rejected the loan application")
+                                window.location.reload()
+                            }
+                            else{
+                                alert("Could not reject the laon application")
+                            }
+                        }
+                    })
+                }
             }
         
+        </script>
+
+        <script>
+            const Web3 = require('web3')
+
+            const web3 = new Web3(new Web3.providers.httpProvider())
         </script>
         
     </head>

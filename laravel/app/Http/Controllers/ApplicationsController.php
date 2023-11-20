@@ -81,8 +81,25 @@ class ApplicationsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function reject(Request $request)
     {
-        //
+        try{
+            $id = $request -> id;
+
+            $updated = DB::table('applications') -> where(['app_id' => $id]) -> update(['status' => 'rejected']);
+
+            if($updated){
+                return response()->json([
+                    'status' => 200,
+                    'message' => "Your loan application has been rejected"
+                ], 200);
+            }
+        }
+        catch(\Exception $e){
+            return response()->json([
+                'status' => 500,
+                'message' => $e
+            ], 200);
+        }
     }
 }
