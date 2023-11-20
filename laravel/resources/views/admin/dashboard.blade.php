@@ -137,7 +137,7 @@
                                     <td class="p-2">
                                         <div class="flex items-center py-2 space-x-4 w-auto">
                                             <div>
-                                                {{ $apps['trx_id'] }}
+                                                {{ Str::limit($apps['app_id'], 10) }}
                                             </div>
                                             <div>
                                                 <button onclick="copy('{{ $apps['app_id'] }}')" class="rounded-md bg-gray-900 p-2 text-gray-200 hover:text-white hover:bg-gray-600">
@@ -218,7 +218,7 @@
                                     <td class="p-2">
                                         <div class="flex items-center py-2 space-x-4 w-auto">
                                             <div>
-                                                {{ $user['blockchainID'] }}
+                                                {{ Str::limit($user['blockchainID'], 10) }}
                                             </div>
                                             <div>
                                                 <button onclick="copy('{{ $user['blockchainID'] }}')" class="rounded-md bg-gray-900 p-2 text-gray-200 hover:text-white hover:bg-gray-600">
@@ -306,7 +306,7 @@
                                     <td class="p-2">
                                         <div class="flex items-center py-2 space-x-4 w-auto">
                                             <div>
-                                                {{ $apps['app_id'] }}
+                                                {{ Str::limit($apps['app_id'], 10) }}
                                             </div>
                                             <div>
                                                 <button onclick="copy('{{ $apps['app_id'] }}')" class="rounded-md bg-gray-900 p-2 text-gray-200 hover:text-white hover:bg-gray-600">
