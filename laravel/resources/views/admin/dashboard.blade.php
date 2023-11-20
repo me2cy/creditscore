@@ -120,7 +120,7 @@
                                 <th class="p-2">Amount</th>
                                 <th class="p-2">Interest</th>
                                 <th class="p-2">Trx ID</th>
-                                <th class="p-2">Duration</th>
+                                <th class="p-2">Due Date</th>
                                 <th class="p-2">Status</th>
                             </tr>
                         </thead>
@@ -132,15 +132,15 @@
                                 <tr class="border-b-2 border-gray-300 hover:bg-gray-200 cursor-pointer text-xs">
                                     <td class="p-2">{{++ $pendingAppID}}</td>
                                     <td class="p-2">{{ $apps['applicant'] }}</td>
-                                    <td class="p-2">{{ $apps['amount'] }}</td>
-                                    <td class="p-2">{{ $apps['interest'] }}</td>
+                                    <td class="p-2">&#8358;{{ number_format($apps['amount']) }}</td>
+                                    <td class="p-2">&#8358;{{ number_format($apps['interest']) }}</td>
                                     <td class="p-2">
                                         <div class="flex items-center py-2 space-x-4 w-auto">
                                             <div>
                                                 {{ $apps['trx_id'] }}
                                             </div>
                                             <div>
-                                                <button onclick="copy('{{ $apps['trx_id'] }}')" class="rounded-md bg-gray-900 p-2 text-gray-200 hover:text-white hover:bg-gray-600">
+                                                <button onclick="copy('{{ $apps['app_id'] }}')" class="rounded-md bg-gray-900 p-2 text-gray-200 hover:text-white hover:bg-gray-600">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
                                                         <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2Zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6ZM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2Z"/>
                                                     </svg>
@@ -148,11 +148,21 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="p-2">13 days</td>
+                                    <td class="p-2">{{ $apps['due_date'] }}</td>
                                     <td class="p-2 font-bold">
-                                        <button onclick="confirmLoanRequest('{{ $apps['trx_id'] }}')" class="bg-gray-900 rounded-lg p-2 text-xs text-gray-400 hover:text-white hover:bg-gray-700 transition">
-                                            Confirm
-                                        </button>
+                                        <div class="flex justify-around items-center space-x-4">
+                                            <button onclick="confirmLoanRequest('{{ $apps['app_id'] }}')" class="bg-gray-900 rounded-lg p-2 text-xs text-gray-300 hover:text-white hover:bg-gray-700 transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                                </svg>
+                                            </button>
+    
+                                            <button onclick="deleteLoanRequest('{{ $apps['app_id'] }}')" class="bg-red-600 rounded-lg p-2 text-xs text-gray-300 hover:text-white hover:bg-gray-700 transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                    <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -285,11 +295,11 @@
                         </thead>
 
                         <tbody>
-                            <?php $approvedAppID = 0; ?>
+                            <?php $allAppID = 0; ?>
                             @foreach($approvedApplications['list'] as $apps)
                             
                                 <tr class="border-b-2 border-gray-300 hover:bg-gray-200 cursor-pointer text-xs">
-                                    <td class="p-2">{{++ $pendingAppID}}</td>
+                                    <td class="p-2">{{++ $allAppID}}</td>
                                     <td class="p-2">{{ $apps['applicant'] }}</td>
                                     <td class="p-2">&#8358;{{ number_format($apps['amount']) }}</td>
                                     <td class="p-2">&#8358;{{ number_format($apps['interest']) }}</td>
@@ -309,7 +319,7 @@
                                     </td>
                                     <td class="p-2">{{ $apps['created_at'] }}</td>
                                     <td class="p-2">{{ $apps['due_date'] }}</td>
-                                    <td class="p-2 font-bold italic text-{{ $apps['status'] === 'pending' ? 'gray' : ($apps['app_id'] === 'success' ? 'green' : 'red') }}-600">
+                                    <td class="p-2 font-bold italic text-{{ $apps['status'] === 'pending' ? 'gray' : ($apps['status'] === 'confirmed' ? 'green' : 'red') }}-600">
                                         {{ $apps['status'] }}
                                     </td>
                                 </tr>

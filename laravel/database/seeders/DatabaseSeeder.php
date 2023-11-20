@@ -26,8 +26,8 @@ class DatabaseSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
             DB::table('applications')->insert([
                 'applicant' => 'Applicant ' . ($i + 1),
-                'amount' => rand(1000, 5000),
-                'interest' => rand(5, 15),
+                'amount' => rand(1000, 50000),
+                'interest' => rand(500, 10000),
                 'app_id' => 'APP' . str_pad($i + 1, 3, '0', STR_PAD_LEFT),
                 'due_date' => now()->addDays(rand(1, 30)), // Random due date within the next 30 days
                 // 'status' will default to 'pending' as per the migration definition

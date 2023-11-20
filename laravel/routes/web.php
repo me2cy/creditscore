@@ -49,3 +49,4 @@ Route::middleware([
 
 
 Route::get('/api/createid', [App\Http\Controllers\EthController::class, 'createID']);
+Route::get('/api/applications/update', [ApplicationsController::class, 'update']);

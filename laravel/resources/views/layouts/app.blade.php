@@ -14,6 +14,8 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         {{-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.2/dist/full.min.css" rel="stylesheet" type="text/css" /> --}}
 {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
@@ -25,6 +27,42 @@
                 const copied = window.navigator.clipboard.writeText(text)
                 if(copied) alert("Copied to clipboard")
             }
+
+            const confirmLoanRequest = id => {
+                try{
+                    
+                    // const agreed = true
+                    const agreed = confirm("Are you sure you want to confirm this request?")
+    
+                    if(agreed){
+                        $.ajax({
+                            url: `/api/applications/update`,
+                            type: 'get',
+                            data: { id },
+                            success: res => {
+                                console.log(res)
+                                if(res.status === 200){
+                                    alert(res.message)
+                                    window.location.reload()
+                                }
+                                else{
+                                    res
+                                }
+                            }
+                        })
+                    }
+
+                }
+
+                catch(e){
+                    console.log(e)
+                }
+            }
+
+            const deleteLoanRequest = id => {
+                const agreed = confirm("Are you sure you want to delete this request?")
+            }
+        
         </script>
         
     </head>

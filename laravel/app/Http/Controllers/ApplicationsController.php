@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApplicationsController extends Controller
 {
@@ -55,9 +56,26 @@ class ApplicationsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        try{
+            $id = $request -> id;
+
+            $updated = DB::table('applications') -> where(['app_id' => $id]) -> update(['status' => 'confirmed']);
+
+            if($updated){
+                return response()->json([
+                    'status' => 200,
+                    'message' => "Your loan request has been confirmed"
+                ], 200);
+            }
+        }
+        catch(\Exception $e){
+            return response()->json([
+                'status' => 500,
+                'message' => $e
+            ], 200);
+        }
     }
 
     /**

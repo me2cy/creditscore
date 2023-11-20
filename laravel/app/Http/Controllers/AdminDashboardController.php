@@ -13,14 +13,14 @@ class AdminDashboardController extends Controller
         $newUsers = User::all();
 
         $applicationsCount = Application::count();
-        $approvedApplications = Application::where(['status' => 'approved']) -> count();
+        $approvedApplications = Application::where(['status' => 'confirmed']) -> count();
         $pendingApplications = Application::where(['status' => 'pending']) -> count();
 
         $approvedAppsCount = $applicationsCount > 0 ? ($approvedApplications/$applicationsCount) * 100 : 0;
         $pendingAppsCount = $applicationsCount > 0 ? ($pendingApplications/$applicationsCount) * 100 : 0;
 
         $pendingApplicatonsList = Application::where(['status' => 'pending']) -> orderBy('id', 'DESC') -> limit(5) -> get();
-        $applicatonsList = Application::all();
+        $applicatonsList = Application::orderBy('id', 'desc') -> limit(20) -> get();
 
         return view('admin.dashboard', [
             'allUsers' => $allUsers,
