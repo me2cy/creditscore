@@ -268,18 +268,84 @@
                     </div>
                 </div>
     
+                <script>
+                    const findTrx = async () =>{
+
+                        try{
+                        
+                            const searchTerm = $('.search-keyword').val();
+
+                            const appSearchUrl = `/api/applications/find/${searchTerm}`
+                            const resRaw = await fetch(appSearchUrl)
+                            const res = await resRaw.json()
+
+
+                            $('.applications-table-body').html('')
+
+                            $('.applications-table-caption').html(
+                                res.status === 404 ? "Could not find any application matching your request" : res.method
+                            )
+
+                            res.message.map((trx, index) => {
+                                $('.applications-table-body').append(`
+                                    <tr class="border-b-2 border-gray-300 hover:bg-gray-200 cursor-pointer text-xs">
+                                        <td class="p-2">${ index++ }</td>
+                                        <td class="p-2">${ trx.applicant}</td>
+                                        <td class="p-2">&#8358;${Number(trx.amount).toLocaleString()}</td>
+                                        <td class="p-2">&#8358;${Number(trx.interest).toLocaleString()}</td>
+                                        <td class="p-2">
+                                            <div class="flex items-center py-2 space-x-4 w-auto">
+                                                <div>
+                                                    ${trx.app_id.substr(0,5)}...${trx.app_id.substr(-5) }
+                                                </div>
+                                                <div>
+                                                    <button onclick="copy('${ trx.app_id }')" class="rounded-md bg-gray-900 p-2 text-gray-200 hover:text-white hover:bg-gray-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2Zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6ZM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2Z"/>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-2">${ trx.created_at }</td>
+                                        <td class="p-2">${ trx.due_date }</td>
+                                        <td class="p-2 font-bold italic text-${ trx.status === 'pending' ? 'gray' : (trx.status === 'confirmed' ? 'green' : 'red') }-600">
+                                            ${ trx.status }
+                                        </td>
+                                    </tr>
+                                `)
+                            })
+
+                            console.log(res)
+
+                        }
+                        catch(e){
+                            console.log(e)
+                        }
+
+                        return;
+                    }
+                </script>
+                
                 <div class="w-full py-3">
-                    <div class="py-3 rounded-lg flex w-full md:w-1/3">
-                        <input type="text" class="p-3 rounded-l-lg shadow-lg border-gray-300 bg-white text-sm text-gray-800 w-full" placeholder="Enter Transaction ID" />
-                        <button type="submit" class="bg-gray-900 shadow-lg rounded-r-lg p-3 px-5 text-sm text-gray-300 hover:text-white cursor-pointer font-bold hover:bg-gray-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                            </svg>
-                        </button>
-                    </div>
+                    <form methd="get" class="search-trx" onsubmit="findTrx()">
+                        <div class="py-3 rounded-lg flex w-full md:w-1/3">
+                            <input type="text" class="search-keyword p-3 rounded-l-lg shadow-lg border-gray-300 bg-white text-sm text-gray-800 w-full" placeholder="Enter Transaction ID" />
+                            <button type="button" onclick="findTrx()" class="bg-gray-900 shadow-lg rounded-r-lg p-3 px-5 text-sm text-gray-300 hover:text-white cursor-pointer font-bold hover:bg-gray-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
                 </div>
                 
                 <div class="w-full p-4 shadow rounded-xl overflow-x-auto ">
+
+                    <div class="applications-table-caption py-3 w-full font-semibold italic text-xs uppercase">
+
+                    </div>
+                    
                     <table class="table table-auto text-sm w-full text-left">
                         <thead>
                             <tr class="border-b-2 border-gray-300 hover:bg-gray-200 cursor-pointer text-gray-900">
@@ -294,7 +360,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody class="applications-table-body">
                             <?php $allAppID = 0; ?>
                             @foreach($approvedApplications['list'] as $apps)
                             

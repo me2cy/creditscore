@@ -6,6 +6,12 @@
 
         <x-validation-errors class="mb-4" />
 
+        <div class="text-lg font-bold">
+            <div class="mb-5">
+                Create an account
+            </div>
+        </div>
+
         <form method="POST" action="{{ route('register') }}">
             @csrf
 

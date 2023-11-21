@@ -102,4 +102,36 @@ class ApplicationsController extends Controller
             ], 200);
         }
     }
+
+    function find (Request $request){
+        $param = $request -> id;
+        $foundTrxs = [];
+        
+        $foundByAppId = Application::where(['app_id' => $param]) -> get();
+
+        if(count($foundByAppId) > 0){
+            $foundTrxs = $foundByAppId;
+        }
+        
+        else{
+            $foundByUser = Application::where(['applicant' => $param]) -> get();
+            
+            if(count($foundByUser) > 0){
+                $foundTrxs = $foundByUser;
+            }
+
+            else{
+                return response()->json([
+                    'status' => 404,
+                    'message' => "could not find any user with the supplied information"
+                ], 200);
+            }
+        }
+
+        return response()->json([
+            'status' => 200,
+            'method' => "found by ".(count($foundByAppId) > 0 ? 'transaction hash' : (count($foundByUser) > 0 ? 'username' : null)),
+            'message' => $foundTrxs
+        ], 200);
+    }
 }
