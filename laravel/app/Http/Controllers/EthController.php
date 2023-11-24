@@ -11,7 +11,8 @@ use Illuminate\Http\Request;
 
 // use BitcoinPHP\BitcoinECDSA\BitcoinECDSA;
 
-use kornrunner\Ethereum\Address;
+// use kornrunner\Ethereum\Address;
+use Web3\Web3;
 
 class EthController extends Controller
 {
@@ -40,5 +41,18 @@ class EthController extends Controller
         }
 
         return $id;
+    }
+
+    public function createWallet(){
+        try{
+            $web3 = new Web3('https://sepolia.infura.io/v3/85fb858128754127a2ff9929624e782f');
+
+            $newWallet = $web3 -> eth() -> accounts();
+
+            return ($newWallet);
+        }
+        catch(\Exception $exception){
+            return ($exception);
+        }
     }
 }

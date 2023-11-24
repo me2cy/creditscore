@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\EthController;
 
+use App\Http\Controllers\UserDashboardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,9 +39,8 @@ Route::middleware([
     })->name('dashboard');
 
     Route::prefix('user') -> group(function () {
-        Route::get('/', [AdminDashboardController::class, 'index']);
-        Route::resource('/admin/applications', ApplicationsController::class);
-        Route::get('/admin/users', [UsersDataController::class, 'index']);
+        Route::get('/', [UserDashboardController::class, 'index']);
+        Route::resource('/user/applications', ApplicationsController::class);
     });
 
     Route::prefix('admin') -> middleware(['isAdmin']) -> group(function () {
@@ -58,4 +59,6 @@ Route::prefix('api') -> group(function (){
     Route::get('/applications/reject', [ApplicationsController::class, 'reject']);
     
     Route::get('/applications/find/{id}', [ApplicationsController::class, 'find']);
+
+    Route::get('/wallet/create', [EthController::class, 'createWallet']);
 });
